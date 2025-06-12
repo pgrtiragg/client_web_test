@@ -1,4 +1,35 @@
 <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.3.2/dist/ag-grid-community.min.js"></script>
 
+<script>
+
+  let gridApi;
+
+const gridOptions = {
+  // Data to be displayed
+  pagination:true,
+  rowData: [],
+  // Columns to be displayed (Should match rowData properties)
+  columnDefs: [],
+};
+
+gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
+
+dfd.readCSV("https://raw.githubusercontent.com/pgrtiragg/test-big-data/refs/heads/main/familia.tsv",{header:true,delimiter:'\t'})
+.then( df=>{
+   const headers = df.columns;
+  
+   const dynamic_headers = headers.map(field => ({ field }));
+   
+   const meses = ["enero","febrero","marzo"]
+
+  const filter = df["mes"].values.map(mes=>meses.includes(mes));
+  filtered= df.loc({ rows: filter })
+  ///========================OK
+  json=dfd.toJSON(filtered)  
+  gridApi.setGridOption("columnDefs",dynamic_headers)
+  gridApi.setGridOption("rowData", json)
+})
+</script>
+
 <div id="myGrid" style="width: 100%; height: 100vh"></div>
