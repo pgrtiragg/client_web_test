@@ -29,6 +29,7 @@ dfd.readCSV("https://raw.githubusercontent.com/pgrtiragg/test-big-data/refs/head
   json=dfd.toJSON(filtered)  
   gridApi.setGridOption("columnDefs",dynamic_headers)
   gridApi.setGridOption("rowData", json)
+  console.table(json)
 })
 </script>
 hola mundo
