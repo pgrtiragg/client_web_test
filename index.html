@@ -2,9 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.3.2/dist/ag-grid-community.min.js"></script>
 
 <script>
-
-  let gridApi;
-
+document.addEventListener("DOMContentLoaded", (event) => {
 const gridOptions = {
   // Data to be displayed
   pagination:true,
@@ -31,6 +29,11 @@ dfd.readCSV("https://raw.githubusercontent.com/pgrtiragg/test-big-data/refs/head
   gridApi.setGridOption("rowData", json)
   console.table(json)
 })
+
+  
+})
+
+
 </script>
 hola mundo
 <div id="myGrid" style="width: 100%; height: 100vh"></div>
