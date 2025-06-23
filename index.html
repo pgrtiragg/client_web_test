@@ -37,6 +37,7 @@ gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
 })*/
 fetch('https://raw.githubusercontent.com/pgrtiragg/tabs_files/refs/heads/master/nna-2024.json')
     .then(response => response.json())
+    .then(d=>console.log(data[0]))
     .then((data) => gridApi.setGridOption('rowData', data))
   
 })
