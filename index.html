@@ -17,7 +17,7 @@ const gridOptions = {
 
 gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
 
-dfd.readCSV("https://raw.githubusercontent.com/pgrtiragg/tabs_files/refs/heads/master/familia-2024.tsv",{header:true,delimiter:'\t'})
+dfd.readCSV("https://raw.githubusercontent.com/pgrtiragg/tabs_files/refs/heads/master/nna-2024.tsv",{header:true,delimiter:'\t'})
 .then( df=>{
    const headers = df.columns;
   
