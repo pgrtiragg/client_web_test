@@ -36,7 +36,12 @@ gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
   gridApi.setGridOption("rowData", json)
   console.table(json)
 })*/
-fetch('https://github.com/pgrtiragg/tabs_files/releases/download/published/familia-2024.json')
+fetch('https://github.com/pgrtiragg/tabs_files/releases/download/published/familia-2024.json', {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	}
+    	})
     .then(response => response.json())  
     .then((data) => gridApi.setGridOption('rowData', data))
   
