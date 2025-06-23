@@ -12,7 +12,9 @@ const gridOptions = {
   pagination:true,
   rowData: [],
   // Columns to be displayed (Should match rowData properties)
-  columnDefs: [],
+  columnDefs: [
+    {field:"fecha"},{field:"tipo_de_solicitud"},{field:"nombre_de_la_persona_o_institución_solicitante"},{field:"asesoría/derivaciones"},{field:"tipo_de_expediente"},{field:"n°_expediente"},{field:"sexo_solicitante"},{field:"edad_solicitante"},{field:"orientación_sexual_solicitante"},{field:"discapacidad_solicitante"},{field:"nacionalidad_solicitante"},{field:"etnia_solicitante"},{field:"etapa"},{field:"proceso"},{field:"subproceso"},{field:"sexo_indirecto"},{field:"edad_indirecto"},{field:"orientación_sexual_indirecto"},{field:"discapacidad_indirecto"},{field:"nacionalidad_indirecto"},{field:"etnia_indirecto"},{field:"expedientes_finalizados"},{field:"resultado"},{field:"montos"},{field:"mes"},{field:"pad"}
+  ],
 };
 
 gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
